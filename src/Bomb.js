@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class Bomb extends Component {
     constructor(props) {
-        super(props)
+        super()
 
         this.state = {
             secondsLeft: props.initialCount
@@ -10,10 +10,10 @@ class Bomb extends Component {
     }
 
     render() {
-        if (this.state.secondsLeft === 0) {
-            return <div>Boom!</div>
+        if (this.state.secondsLeft !== 0) {
+            return <div>{this.state.secondsLeft} seconds left before I go boom!</div>
         } else {
-        return <div>{this.state.secondsLeft} seconds left before I go boom!</div>
+        return <div>Boom!</div>
         }
     }
 }
